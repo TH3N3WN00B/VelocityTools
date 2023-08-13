@@ -11,6 +11,9 @@
 Some useful tools for Velocity. \
 [Modrinth](https://modrinth.com/plugin/velocitytools)
 
+## This fork
+Bring some features from [Enhanced Velocity](https://github.com/Syrent/EnhancedVelocity) into Velocitytools.
+
 ## Features of VelocityTools
 
 - [Protocol](https://wiki.vg/Protocol_History) Blocker (prohibits connection from certain versions)
