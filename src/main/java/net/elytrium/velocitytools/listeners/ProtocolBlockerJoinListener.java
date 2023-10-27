@@ -33,7 +33,7 @@ import net.elytrium.velocitytools.utils.ProtocolUtil;
 import net.elytrium.velocitytools.utils.WhitelistUtil;
 import net.kyori.adventure.text.Component;
 
-public class ProtocolBlockerJoinListener {
+public final class ProtocolBlockerJoinListener {
 
   private final MethodHandle delegate;
   private final boolean whitelist;

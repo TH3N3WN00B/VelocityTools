@@ -26,7 +26,7 @@ import java.lang.reflect.Method;
 import net.elytrium.velocitytools.Settings;
 import org.jetbrains.annotations.NotNull;
 
-public class ChannelInitializerHook extends ChannelInitializer<Channel> {
+public final class ChannelInitializerHook extends ChannelInitializer<Channel> {
 
   private final Method initChannel;
   private final ChannelInitializer<Channel> originalInitializer;

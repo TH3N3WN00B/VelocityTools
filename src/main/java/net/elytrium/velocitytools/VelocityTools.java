@@ -61,7 +61,7 @@ import org.slf4j.Logger;
         "Elytrium (https://elytrium.net/)",
     }
 )
-public class VelocityTools {
+public final class VelocityTools {
 
   @MonotonicNonNull
   private static Logger LOGGER;
