@@ -49,7 +49,7 @@ dependencies() {
   compileOnly("it.unimi.dsi:fastutil-core:8.5.12")
 
   // To suppress VulnerableLibrariesLocal of velocity-api dependency.
-  compileOnly("org.yaml:snakeyaml:2.0")
+  compileOnly("org.yaml:snakeyaml:2.2")
 
   implementation("net.elytrium:java-commons:1.1.0-SNAPSHOT")
   implementation("net.elytrium:fastprepare:1.0.4")
