@@ -116,13 +116,15 @@ public final class VelocityTools {
 
     HooksInitializer.init(this.server);
 
-    if (!UpdatesChecker.checkVersionByURL("https://raw.githubusercontent.com/Elytrium/VelocityTools/master/VERSION", Settings.IMP.VERSION)) {
-      LOGGER.error("****************************************");
-      LOGGER.warn("The new VelocityTools update was found, please update.");
-      LOGGER.error("https://github.com/Elytrium/VelocityTools/releases/");
-      LOGGER.error("****************************************");
+    if (Settings.IMP.MAIN.CHECK_FOR_UPDATES) {
+      if (!UpdatesChecker.checkVersionByURL("https://raw.githubusercontent.com/Elytrium/VelocityTools/master/VERSION", Settings.IMP.VERSION)) {
+        LOGGER.error("****************************************");
+        LOGGER.warn("The new VelocityTools update was found, please update.");
+        LOGGER.error("https://github.com/Elytrium/VelocityTools/releases/");
+        LOGGER.error("****************************************");
+      }
+      this.metricsFactory.make(this, 12708);
     }
-    this.metricsFactory.make(this, 12708);
   }
 
   @SuppressFBWarnings(value = "NP_NULL_ON_SOME_PATH", justification = "LEGACY_AMPERSAND can't be null in velocity.")

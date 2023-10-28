@@ -48,6 +48,8 @@ public class Settings extends YamlConfig {
 
   public static class MAIN {
 
+    public boolean CHECK_FOR_UPDATES = true;
+
     @Comment({
         "VelocityTools will consume more RAM if this option is enabled, but compatibility with other plugins will be better",
         "Enable it if you have a plugin installed that bypasses compression (e.g. Geyser)"
