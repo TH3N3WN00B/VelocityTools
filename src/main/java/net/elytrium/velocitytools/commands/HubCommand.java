@@ -51,12 +51,10 @@ public class HubCommand implements SimpleCommand {
   @Override
   public void execute(SimpleCommand.Invocation invocation) {
     CommandSource source = invocation.source();
-    if (!(source instanceof Player)) {
+    if (!(source instanceof Player player)) {
       source.sendMessage(CommandMessages.PLAYERS_ONLY);
       return;
     }
-
-    Player player = (Player) source;
 
     String serverName;
     int serversSize = this.servers.size();

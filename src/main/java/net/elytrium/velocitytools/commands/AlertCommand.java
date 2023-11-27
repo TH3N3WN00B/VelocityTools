@@ -49,7 +49,7 @@ public class AlertCommand implements SimpleCommand {
       source.sendMessage(this.messageNeeded);
     } else {
       Component component = VelocityTools.getSerializer().deserialize(MessageFormat.format(this.prefix, String.join(" ", args)));
-      if (this.server.getAllPlayers().size() < 1) {
+      if (this.server.getAllPlayers().isEmpty()) {
         source.sendMessage(this.emptyProxy);
       } else {
         if (!(source instanceof Player)) {

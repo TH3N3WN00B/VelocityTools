@@ -99,7 +99,7 @@ public class VelocityToolsCommand implements SimpleCommand {
         .filter(command -> command.hasPermission(source))
         .collect(Collectors.toList());
 
-    if (availableSubcommands.size() > 0) {
+    if (!availableSubcommands.isEmpty()) {
       source.sendMessage(AVAILABLE_SUBCOMMANDS_MESSAGE);
       availableSubcommands.forEach(command -> source.sendMessage(command.getMessageLine()));
     } else {
@@ -110,7 +110,7 @@ public class VelocityToolsCommand implements SimpleCommand {
   private enum Subcommand {
     RELOAD("Reload config.", (VelocityToolsCommand parent, CommandSource source, String[] args) -> {
       parent.plugin.reload();
-      source.sendMessage(Component.text("§aСonfig reloaded successfully!"));
+      source.sendMessage(Component.text("§aConfig reloaded successfully!"));
     });
 
     private final String command;
