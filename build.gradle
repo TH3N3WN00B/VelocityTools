@@ -4,10 +4,10 @@ plugins() {
   id("com.github.johnrengelman.shadow").version("8.1.1")
 
   id("checkstyle")
-  id("com.github.spotbugs").version("5.2.1")
+  id("com.github.spotbugs").version("6.0.2")
   id("org.cadixdev.licenser").version("0.6.1")
 
-  id("com.github.gmazzo.buildconfig").version("4.1.2") // Kotlin :skull:
+  id("com.github.gmazzo.buildconfig").version("4.2.0") // Kotlin :skull:
 }
 
 this.group = "net.elytrium"
@@ -25,11 +25,12 @@ repositories() {
   mavenCentral()
 
   flatDir {
-    dirs './libs'
+    dirs("./libs")
   }
+
   maven {
-    name = "JNNGL-repo"
-    url = "https://maven.jnngl.me/public/"
+    name = "elytrium-repo"
+    url = "https://maven.elytrium.net/repo/"
   }
   maven {
     name = "papermc-repo"
@@ -41,22 +42,21 @@ dependencies() {
   annotationProcessor("net.java.dev.jna:jna-platform:5.13.0")
   annotationProcessor("com.github.bsideup.jabel:jabel-javac-plugin:1.0.0") // Dreeam TODO - Waiting to bump to 1.0.1
 
-  compileOnly("com.github.spotbugs:spotbugs-annotations:4.8.0")
+  compileOnly("com.github.spotbugs:spotbugs-annotations:4.8.2")
 
   compileOnly("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
   annotationProcessor("com.velocitypowered:velocity-api:3.2.0-SNAPSHOT")
   //compileOnly("com.velocitypowered:velocity-proxy:3.2.0-SNAPSHOT") // From Elytrium Repo.
-  compileOnly("com.velocitypowered.proxy:velocity:3.2.0-SNAPSHOT-294") // libs/velocity-3.2.0-SNAPSHOT-294.jar
-  //annotationProcessor("com.velocitypowered.proxy:velocity:3.2.0-SNAPSHOT-294") // libs/velocity-3.2.0-SNAPSHOT-294.jar
+  compileOnly(fileTree("libs")) // Dreeam - Velocity latest dev version
 
   // Needs for some velocity methods.
-  compileOnly("io.netty:netty-transport:4.1.100.Final")
+  compileOnly("io.netty:netty-transport:4.1.101.Final")
   compileOnly("it.unimi.dsi:fastutil-core:8.5.12")
 
   // To suppress VulnerableLibrariesLocal of velocity-api dependency.
   compileOnly("org.yaml:snakeyaml:2.2")
 
-  implementation("net.elytrium:java-commons:1.1.1")
+  implementation("net.elytrium:java-commons:1.1.1") // Newest is 1.2.5
   implementation("net.elytrium:fastprepare:1.0.7")
 
   implementation("org.bstats:bstats-velocity:3.0.2")
@@ -82,7 +82,7 @@ checkstyle() {
 spotbugsMain() {
   reports.register("html") {
     required = true
-    outputLocation.fileValue(file("${layout.buildDirectory.get()}/reports/spotbugs/main/spotbugs.html"))
+    outputLocation.fileValue(file("${project.layout.buildDirectory.get()}/reports/spotbugs/main/spotbugs.html"))
     stylesheet = "fancy-hist.xsl"
   }
 }

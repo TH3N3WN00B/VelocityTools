@@ -110,7 +110,7 @@ public class VelocityToolsCommand implements SimpleCommand {
   private enum Subcommand {
     RELOAD("Reload config.", (VelocityToolsCommand parent, CommandSource source, String[] args) -> {
       parent.plugin.reload();
-      source.sendMessage(Component.text("§aConfig reloaded successfully!"));
+      source.sendMessage(Component.text("Config reloaded successfully!", NamedTextColor.GREEN));
     });
 
     private final String command;
