@@ -21,13 +21,8 @@ jobs:
           distribution: temurin
       - name: Build VelocityTools
         run: ./gradlew build
-      - name: Upload VelocityTools
-        uses: actions/upload-artifact@main
-        with:
-          name: VelocityTools
-          path: "build/libs/*.jar"
-      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
-        if: ${{ github.event_name == 'push' }}
+      - name: Release VelocityTools
+        uses: marvinpinto/action-automatic-releases@master
         with:
           title: "VelocityTools"
           automatic_release_tag: "vt"
