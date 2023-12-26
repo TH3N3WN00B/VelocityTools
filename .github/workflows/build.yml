@@ -26,9 +26,8 @@ jobs:
         with:
           name: VelocityTools
           path: "build/libs/*.jar"
-
-      - name: Release VelocityTools
-        uses: marvinpinto/action-automatic-releases@master
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        if: ${{ github.event_name == 'push' }}
         with:
           title: "VelocityTools"
           automatic_release_tag: "vt"
