@@ -36,11 +36,15 @@ repositories() {
     name = "sonatype-oss-snapshots1"
     url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
   }
+  maven {
+    name = "jitpack.io"
+    url = "https://www.jitpack.io"
+  }
 }
 
 dependencies() {
   annotationProcessor("net.java.dev.jna:jna-platform:5.13.0")
-  annotationProcessor("com.github.bsideup.jabel:jabel-javac-plugin:1.0.0")
+  annotationProcessor("com.github.bsideup:jabel:1.0.1")
 
   compileOnly("com.github.spotbugs:spotbugs-annotations:4.8.2")
 
