@@ -57,7 +57,7 @@ public class Settings extends YamlSerializable {
   }
 
   @Comment({
-      @CommentValue("Don't use \\n, use {NL} for new line. Ampersand (&) color codes are supported too.\n"),
+      @CommentValue("Don't use {NL}, use \\n for new line. Ampersand (&) color codes are supported too.\n"),
       @CommentValue(),
       @CommentValue("Permissions:"),
       @CommentValue("  │"),
@@ -150,7 +150,7 @@ public class Settings extends YamlSerializable {
           @CommentValue("1.7.2, 1.7.6, 1.8, 1.9, 1.9.1, 1.9.2, 1.9.4, 1.10, 1.11, 1.11.1, 1.12, 1.12.1, 1.12.2,"),
           @CommentValue("1.13, 1.13.1, 1.13.2, 1.14, 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.15, 1.15.1, 1.15.2,"),
           @CommentValue("1.16, 1.16.1, 1.16.2, 1.16.3, 1.16.4, 1.17, 1.17.1, 1.18, 1.18.2, 1.19, 1.19.1, 1.19.3, 1.19.4,"),
-          @CommentValue("1.20, 1.20.1, 1.20.2, 1.20.3, 1.20.4,  1.20.5, LATEST"),
+          @CommentValue("1.20, 1.20.2, 1.20.3, 1.20.5, LATEST"),
       })
       public List<String> VERSIONS = List.of("1.7.2");
       public String MINIMUM_VERSION = "1.7.2";
@@ -158,7 +158,7 @@ public class Settings extends YamlSerializable {
       @Comment(@CommentValue("For \"block-ping\" option."))
       public String BRAND = "Version is not supported!";
       @Comment(@CommentValue("For \"block-ping\", set to \"\" to disable."))
-      public String MOTD = "&cVersion is not supported!{NL}&ePlease, join with Minecraft 1.12.2 or newer.";
+      public String MOTD = "&cVersion is not supported!\n&ePlease, join with Minecraft 1.12.2 or newer.";
       @Comment(@CommentValue("For \"block-joining\" option."))
       public String KICK_REASON = "&cYour version is unsupported!";
     }
@@ -184,7 +184,7 @@ public class Settings extends YamlSerializable {
       @Comment(@CommentValue("For \"debug\" option."))
       public boolean SHOW_BLOCKED_ONLY = false;
       @Comment(@CommentValue("For \"block-joining\" option, set to \"\" to show the default reason."))
-      public String KICK_REASON = "&cPlease, don't connect to the direct ip!{NL}Use example.com";
+      public String KICK_REASON = "&cPlease, don't connect to the direct ip!\nUse example.com";
       public boolean WHITELIST = true;
       @Comment(@CommentValue("IP Addresses starting with \"127.\" or equal to \"localhost\" will be blocked."))
       public boolean BLOCK_LOCAL_ADDRESSES = false;
